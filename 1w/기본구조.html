@@ -1,0 +1,186 @@
+<!DOCTYPE html> <!-- htm5 문서인것을 선언하여 컴퓨터에게 알림-->
+<html lang="en"> <!-- html 페이지의 루트, 태그는 항상 닫아야함 -->
+<head> <!-- html의 메타적인 요소를 담음 UI상에 나타나지 않음 -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- IE브라우저에서 가장 최신 표준 모드 선택 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- 애플이 아이폰, 아이패드 등 브라우저에 viewport크기 조절을 위해 만듬 -->
+  <title>기본구조</title> <!-- 타이틀바에 제목 설정-->
+</head>
+<body> <!-- 보여지는 컨텐츠들을 선언함 -->
+  <a href="#find">find</a> <!-- 해시태그 a태그 배우고나서 -->
+  <h1>h1태그입니다</h1> <!-- heading 헤딩이라고 한다, 제목1, 제목2 목차 다룰때 많이쓰임-->
+  <h2 id="find">h2태그입니다</h2> <!-- id를 통해 해시태그 링크거는법 <a href="#find">find</a> -->
+  <h3>h3태그입니다</h3>
+  <h4>h4태그입니다</h4>
+  <h5>h5태그입니다</h5>
+  <h6>h6태그입니다</h6>
+
+  아무런 태그도 감싸지 않으면
+  글씨를 써도 어느역할을 하는지<br> <!-- br태그를 통해 줄 넘기기 가능 -->
+  브라우저가 해석하지 못한다.
+  <p>문단을 만드는 태그 p</p> <!-- 약자 paragraph 항상 새로운 라인에 첫줄 들여쓰기  -->
+  <p>무언가 길게 쓰여진 문단 무언가 길게 쓰여진 문단 무언가 길게 쓰여진 문단</p>
+  <p style="color:red">빨간색 문단!!</p>
+  <!-- style 속성을 통해 css를 특정 태그에 지정 할 수 있다. -->
+  <p title="툴팁을 띄우고 싶다면...">마우스를 올리면 툴팁 등장</p>
+  <hr> <!-- 수평 태그	horizontal rule의 약자 -->
+
+  <pre> <!-- preformat의 약자, 텍스트 그대로 출력-->
+    글씨를 쓰면
+    쓰여진대로
+
+    그대로 출력
+    되는 태그 pre
+  </pre>
+
+  <!-- 글자 포맷팅 태그들 -->
+  <b>Bold text</b><br>
+  <strong>Important text</strong><br>
+  <i>Italic text</i><br>
+  <em>Emphasized text</em><br>
+  <mark>Marked text</mark><br>
+  <small>Samller text</small><br>
+  <del>Deleted text</del><br>
+  <ins>Inserted text</ins><br>
+  <sub>Subscript text</sub><br>
+  <sup>Superscript text</sup><br>
+  <u>Underline</u><br>
+
+  <!-- 인용 구문 태그들 -->
+  <blockquote cite="http://www.worldwildlife.org/who/index.html">
+    For 50 years, WWF has been protecting the future of nature.
+    The world's leading conservation organization,
+    WWF works in 100 countries and is supported by
+    1.2 million members in the United States and
+    close to 5 million globally.
+  </blockquote> <!-- 다른 소스에서 인용하는 경우 -->
+  <q>짧은 인용문</q> <!-- quotation -->
+  <abb title="World Health Organization">WHO</abb> <!-- Abbreviation 축약형 -->
+  <address> <!-- 이탈릭체로 렌더링 -->
+  Written by John Doe.<br>
+  Visit us at:<br>
+  Example.com<br>
+  Box 564, Disneyland<br>
+  USA
+  </address>
+  이 노래는 아이유의 <cite>Celebrity</cite>입니다 <!--노래, 시, 영화 등 저작물 표기 -->
+  <bdo dir="rtl">텍스트를 거꾸로 출력해줍니다</bdo>
+  <!-- Bi-Directional Override의 약자 방향 재정의 태그, rtl -> right to left -->
+
+
+
+
+  <a href="https://www.naver.com">네이버 링크</a> <!-- 링크걸기-->
+  <!-- href라는 것을 attribute 속성이라고 한다. <태그명 속성=값>텍스트</태그명>-->
+  <!-- href는 hypertext reference의 약자-->
+  <!-- _self -> 해당 윈도우, _blank -> 새로운 윈도우, _parent -> 부모 프레임, _top -> 전체 body의 윈도우-->
+  <img src="https://images.unsplash.com/32/Mc8kW4x9Q3aRR3RkP5Im_IMG_4417.jpg?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" alt="background" width="100" height="100">
+  <!-- 이미지 src는 source의 약자-->
+  <!-- Absolute 절대적 URL -> 전체 경로 다 집어넣음, Relative 상대적 URL -> 현재 페이지의 도메인 주소부분을 생략-->
+  <img src="http://127.0.0.1:5500/html/cat.jfif" height="100", width="100">
+  <img src="cat.jfif" height="100", width="100" alt="Missing Image">
+  <!-- alt태그는 이미지가 어떠한 이유로 로드가 안되는 경우 대신 출력되는 텍스트, 시각장애인에게도 필요함-->
+
+  <!-- 특정 이미지 구역을 지정 할 수 있는 map 태그.. rect, circle, poly, default -->
+  <img src="cat.jfif" alt="Workplace" usemap="#workmap" width="400" height="379">
+  <map name="workmap">
+    <area shape="rect" coords="96,26,320,360" alt="Cat" href="#find">
+  </map>
+
+  <picture> <!-- 브라우저 크기에 따른 이미지 변화 -->
+    <source media="(min-width: 650px)" srcset="cat.jfif">
+    <source media="(min-width: 465px)" srcset="dog.jfif">
+    <img src="img_girl.jpg" style="width:auto;">
+  </picture>
+
+  <!-- div는 division html 컨테이너로 사용  -->
+  <!-- 백그라운드 이미지를 넣었음에도 출력되지 않음 why? div height->0px-->
+  <div style="background-image: url('cat.jfif');"> <!-- 코드의 구역를 나누고, css적용 범위를 선정하기 위한 태그, 특별한 역할은 없으면 크기가 따로 없음-->
+    <!-- 이미지 태그로 자식이 들어올 경우 크기 조절 되는것 확인-->
+  </div>
+
+  <div style="height:100px;width:100px;background-color:aqua"></div>
+  <div style="height:100px;width:100px;background-color:rgb(0, 0, 255)"></div>
+  <div style="height:100px;width:100px;background-color:rgba(0, 0, 255, 0.2)"></div>
+  <!-- rgba red:0~255 green:0~255 blue:0~255 alpha:0~1(투명값) -->
+  <div style="height:100px;width:100px;background-color:#0000FF"></div>
+  <!-- F는 16진수 00~FF는 0~255 표현 가능 -->
+  <div style="height:100px;width:100px;background-color:hsl(0, 100%, 50%)"></div>
+  <!-- hsl(hue, saturation, lightness) 색조, 채도, 밝기-->
+
+  <!-- style="list-style-type:none;" 리스트 옆에 붙는거 없애기 disc, circle, square -->
+  <ul> <!-- unordered list -->
+    <li>Coffee</li> <!-- list -->
+    <li>Tea</li>
+    <li>Milk</li>
+  </ul>
+  <!-- decimal, decimal-leading-zero, lower-roman, upper-roman, lower-greek, lower-latin, upper-latin, armenian, georgian, lower-alpha, upper-alpha-->
+  <!-- type="1", 1, A, a, I, i -->
+  <ol> <!-- ordered list -->
+    <li>Coffee</li>
+    <li>Tea</li>
+    <li>Milk</li>
+  </ol>
+
+  <dl> <!-- definition list 설명하는것을 정의하는 리스트 -->
+    <dt>Coffee</dt> <!-- definition Term -->
+    <dd> - 커피는 뜨겁다</dd> <!-- definition description -->
+    <dt>Milk</dt>
+    <dd> - 우유는 차갑다</dd>
+  </dl>
+
+
+  <!-- 표 테이블 만들기 -->
+  <style>
+    table {
+      width:100%;
+    }
+    table, th, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+    th, td {
+      padding: 15px;
+      text-align: left;
+    }
+    #t01 tr:nth-child(even) {
+      background-color: #eee;
+    }
+    #t01 tr:nth-child(odd) {
+     background-color: #fff;
+    }
+    #t01 th {
+      background-color: black;
+      color: white;
+    }
+    </style>
+
+  <table id="t01">
+    <caption>표에 대한 설명</caption>
+    <tr> <!-- table row -->
+      <th>Firstname</th> <!-- table header 굵은 글씨, 가운데 정렬-->
+      <th>Lastname</th> 
+      <th>Age</th>
+    </tr>
+    <tr>
+      <td>Jill</td> <!-- table data 보통 글씨, 왼쪽 정렬 -->
+      <td>Smith</td>
+      <td>50</td>
+    </tr>
+    <tr>
+      <td>Eve</td>
+      <td>Jackson</td>
+      <td>94</td>
+    </tr>
+    <tr>
+      <td>John</td>
+      <td>Doe</td>
+      <td>80</td>
+    </tr>
+  </table>
+
+
+  <!-- class는 여러 html요소에도 ok, id는 페이지내 유일한 html 요소에만 가능 -->
+  <!-- class, id는 효율적으로 html element를 찾아내기 위해서 사용함, css selector -->
+</body>
+</html>
