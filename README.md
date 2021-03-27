@@ -15,4 +15,18 @@
 * 2단계 무슨 의미인지 알 수 있는 상태 <- 이수준까지 코드해석을 위해, 이런게 있었다는것을 know
 * 1단계 어디서 들어본적 있는 상태
 
+## 2w
+* 정보보호 직군 관련 정보
+* css를 사용하는 3가지 방법(inline, export ,,,)
+* css selector [css selector의 이해](https://flukeout.github.io/)
+* [css 우선순위](https://webclub.tistory.com/407)
+* ~~~
+* position
+* [css frog](https://flexboxfroggy.com/#ko) 하면서 flex 이해하기
+* [google font](https://fonts.google.com/), [font awesome](https://fontawesome.com/icons/google), [boot strap](https://getbootstrap.com/) 간단한 사용법
+
+
+
+
 [브라우저는 어떻게 동작하는가?](https://d2.naver.com/helloworld/59361)
+[웹개발자 로드맵](https://github.com/Han-Kyeol/developer-roadmap-kr-)

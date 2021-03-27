@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <style>
+    /* CSS는 Cascading(폭포가 떨어지다) Style Sheet의 약자 */
+    /* Author style -> User Style -> Brower  */
+    /*
+    * selector 기본 구조
+    Universal -> *
+    type -> Tag
+    id -> #id
+    class -> .class
+    state -> :
+    Attribute -> []
+
+    ex)
+    *
+    p.demo
+    div#app
+    a[href="https://www.naver.com]
+    button:hover
+
+    selector {
+      property: value;
+    }
+    */
+  </style>
+  <table border=2 width=300 height=300>
+    <tr>
+      <td rowspan="2">2</td>
+      <td rowspan="2">2</td>
+      <td rowspan="1">1</td>
+      <td rowspan="4">4</td>
+      
+    </tr>
+    <tr>
+      <td rowspan="3">3</td>
+    </tr>
+    <tr>
+      <td rowspan="1">10시</td>
+      <td rowspan="1">2</td>
+    </tr>
+    <tr>
+      <td rowspan="1">11시</td>
+      <td rowspan="1">3</td>
+    </tr>
+  </table>
+
+  <hr>
+  <h2>Block Level, Inline Level</h2>
+  <style>
+    #level > div, #level > span {
+      width: 40px;
+      height: 40px;
+      margin: 20px;
+    }
+
+    #level > div {
+      background-color: red;
+    }
+
+    #level > span {
+      background-color: yellow;
+      display: inline; /* 수정해보기  */
+    }
+    /*
+    block : 무조건 한줄 점유, 영역만큼 점유
+    inline : content/text 크기만큼 점유, margin, padding, width, height가 ui상에서 적용 x
+    inline-block : 두개 짬뽕이다. width, height, maring, padding 적용 ok, 그외 inline처럼 작동
+    */
+  </style>
+
+  <div id="level">
+    <!-- Block tag -->
+    <div></div>
+    <div></div>
+    <div></div>
+
+    <!-- Inline tag -->
+    <span>1</span>
+    <span>2</span>
+    <span>3</span>
+  </div>
+
+
+<!-- ------------------------------------------------------------------------------------------------ -->
+  <hr>
+  <h2>position</h2>
+  <style>
+    #position > div {
+      width: 10px;
+      height: 10px;
+      margin: 10px;
+      background-color: red;
+    }
+
+    #position > div.box {
+      background-color: blue;
+      left: 10px;
+      top: 10px;
+      position: relative; /* 다양하게 바꿔보기 */
+    }
+
+    #position {
+      background: yellow;
+      width: 400px;
+      height: 400px;
+      left: 20px;
+      top: 20px;
+      position: static;
+      /*
+      static(default): 위치 지정 안할때 사용
+      relative: static위치로부터 위치를 상대적으로 변경할때
+      absolute: 원래 위치와 상관없이 좌표로 위치 지정 가능, 부모 기준으로 위치 결정
+      fixed: 원래위치와 상관없이 지정 가능, 브라우저에 대해 좌표를 지정, 스크롤에 영향을 받지않고 고정된 위치를 가짐
+      sticky: 스크롤의 특정 지점에 도달하면 fixed처럼 고정된 위치를 가짐
+      https://jsfiddle.net/daehwan/xk0od1av/28/ : fixed, sticky 차이 이해하기
+      */
+    }
+  </style>
+  <div id="position">
+    <!-- div * 10-->
+    <div></div>
+    <div class="box"></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+
+
+  <!-- ----------------------------------------------------------------------- -->
+  <hr>
+  <h2>float</h2>
+  <style>
+    #float img {
+      float: left;
+      /*
+      글과 사진를 조화롭게 배치할때 유용
+      left, right, center, initial, inherit
+      */
+    }
+  </style>
+  <div id="float">
+    <p>
+      <img src="https://images.unsplash.com/photo-1537151625747-768eb6cf92b2?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8ZG9nfGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60" alt="dog" height=100px, width=100px>
+      어떠한글을 쓰고 있습니다 어떠한글을 쓰고 있습니다 어떠한글을 쓰고 있습니다
+    </p>
+  </div>
+
+
+  <!-- ----------------------------------------------------------------------- -->
+  <hr>
+  <h2>Flexbox</h2>
+  <!-- flexbox는 float의 발전형태, main axis를 기준으로 cross axis를 정함 -->
+  <style>
+
+    #flexbox {
+      background-color: beige;
+      height: 100vh;
+      display:flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      
+      justify-content:flex-end;
+      align-items:center;
+      align-content: ;
+    }
+    /*
+    차후 정리...
+    */
+
+    #flexbox > div.item {
+      width: 20px;
+      height: 20px;
+    }
+
+    #flexbox > div.item1 {
+      background-color:red;
+    }
+    #flexbox > div.item2 {
+      background-color:orange;
+    }
+    #flexbox > div.item3 {
+      background-color:yellow;
+    }
+    #flexbox > div.item4 {
+      background-color:green;
+    }
+    #flexbox > div.item5 {
+      background-color:blue;
+    }
+  </style>
+  <!-- div#flexbox>div.item.item${$}*5-->
+  <div id="flexbox">
+    <div class="item item1">1</div>
+    <div class="item item2">2</div>
+    <div class="item item3">3</div>
+    <div class="item item4">4</div>
+    <div class="item item5">5</div>
+  </div>
+</body>
+</html>
