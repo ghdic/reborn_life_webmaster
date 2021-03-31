@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <style>
+    /* CSS는 Cascading(폭포가 떨어지다) Style Sheet의 약자 */
+    /* Author style -> User Style -> Brower  */
+    /*
+    1.<tag style='구문'>  - inline
+    2.<style> <style> - internal
+    3.<link rel='stylesheet' href='style.cc'> - external
+
+    * selector 기본 구조
+    Universal -> *
+    type -> Tag
+    id -> #id
+    class -> .class
+    state -> :
+    Attribute -> []
+
+    ex)
+    *
+    p.demo
+    div#app
+    a[href="https://www.naver.com]
+    button:hover
+
+    selector {
+      property: value;
+    }
+    */
+  </style>
+
+  <h2>Background</h2>
+  <style>
+    #background {
+      width: 100px;
+      height: 100px;
+      background-color:blueviolet;
+      opacity: 0.3; /* 투명도 0~1 */
+    }
+
+    #background-image {
+      background-color: yellow;
+      background-image: url('background.jpg');
+      width: 1000px;
+      height: 1000px;
+      background-repeat:space repeat; /* 두개값 넣을 경우 가로 | 세로 */
+      /*
+      no-repeat: 반복x
+      repeat: 반복
+      repeat-x: x축 반복
+      repeat-y: y축 반복
+      space: 배경이 잘리지 않는선에서 반복
+      round: 배경이 요소크기보다 작을 경우 크기 맞춰줌, 아닐경우 repeat
+      */
+
+      background-position: right bottom; /* x | y */
+      background-attachment:local;
+      /*
+      scroll: 배경 고정(default)
+      fixed: 배경을 뷰포트에 대해 고정
+      local: 배경을 element 컨텐츠에 대해 고정
+      https://mdn.github.io/learning-area/css/styling-boxes/backgrounds/background-attachment.html
+      */
+
+      /*
+      shorthand(속기)
+      background: yellow url('background.jpg') repeat right top;
+      */
+    }
+  </style>
+  <div id='background'></div>
+  <div id='background-image'></div>
+
+  <hr>
+  <h2>Border Style</h2>
+  <style>
+    #border {
+      /*
+      border-top-style: dotted;
+      border-right-style: solid;
+      border-bottom-style: dotted;
+      border-left-style: solid;
+      이런식으로 개별로 특정 방향만 줄수도 있음
+      */
+      border-style: outset; /* 위 오른쪽 아래 왼쪽 // 0시부터 시계방향 */
+      /*
+      dotted: 여러개의 점으로된 경계
+      dashed: 여러개의 선으로된 경계
+      solid: 하나의 선으로된 경계
+      double: 두개의 선을 겹친 경계
+      groove: 테두리가 파인것처럼 그림
+      ridge: 테두리가 튀어나온것처럼 그림
+      inset: 요소가 파인것처럼 테두리를 그림
+      outset: 요소가 튀어나온것처럼 테두리를 그림
+      */
+
+      border-width: 3px; /* thick, thin, 1em 3px.. 등등 */
+      border-color: blue;
+      border-radius: 5px; /* 꼭지점 둥글게 */
+      /*
+      shorthand
+      border: 5px solid red;
+
+      번외 outline -> 경계선 바깥요소에 그려줌
+      outline-width, outline-style, outline-color 모두 사용법 같음
+      outline-offset: 15px; 경계선에서 15px 떨어트려 그림
+      */
+
+    }
+
+  </style>
+  <p id="border">Paragraph 태그</p>
+
+  <hr>
+  <h2>margin & padding</h2>
+  <style>
+
+
+    #margin > span:nth-child(1){
+      margin: 200px;
+      border: 2px solid black;
+    }
+
+    #margin > span:nth-child(2) {
+      margin: 20px 40px 50px 200px;
+      border: 2px solid black
+    }
+    /* 특정 조건을 성립해야만 마진 상쇄된다  */
+    #margin > h1 {
+      margin: 0 0 50px 0;
+    }
+
+    #margin > h2 {
+      margin: 20px 0 0 0;
+    }
+
+    #padding > div:nth-child(1) {
+      width: 300px;
+      padding: 50px;
+      background-color: yellow;
+    }
+
+    #padding > div:nth-child(2) {
+      width: 300px;
+      padding: 50px;
+      box-sizing: border-box;
+      background-color: teal;
+      /* box-sizing이 width크기를 보존시키고 안에 요소 크기를 조절  */
+    }
+  </style>
+  <div id='margin'>
+    <span id='margin1'>margin1</span>
+    <span id='margin2'>margin2</span>
+    <h1>h1 tag</h1>
+    <h2>h2 tag</h2>
+  </div>
+
+  <div id="padding">
+    <div>300px 너비</div>
+    <div>300px 너비, box-sizing 적용</div>
+  </div> <!-- padding, margin, border, content로 이루어진걸 박스 모델링이라고 부름 -->
+
+<!-- ------------------------------------------------------------------------------------------------ --> 
+  <hr>
+  <h2>Block Level, Inline Level</h2>
+  <style>
+    #level > div, #level > span {
+      width: 40px;
+      height: 40px;
+      margin: 20px;
+    }
+
+    #level > div {
+      background-color: red;
+    }
+
+    #level > span {
+      background-color: yellow;
+      display: inline; /* 수정해보기  */
+    }
+    /*
+    block : 무조건 한줄 점유, 영역만큼 점유
+    inline : content/text 크기만큼 점유, margin, padding, width, height가 ui상에서 적용 x
+    inline-block : 두개 짬뽕이다. width, height, maring, padding 적용 ok, 그외 inline처럼 작동
+    */
+  </style>
+
+  <div id="level">
+    <!-- Block tag -->
+    <div></div>
+    <div></div>
+    <div></div>
+
+    <!-- Inline tag -->
+    <span>1</span>
+    <span>2</span>
+    <span>3</span>
+  </div>
+
+<!-- ------------------------------------------------------------------------------------------------ -->
+  <hr>
+  <h2>텍스트</h2>
+  <style>
+    #text > h1 {
+      background-color: blue;
+      color: white;
+      text-align: center; /* left center right justify(기본 왼쪽정렬, 글자를 동일한 폭을 가지게 뻗게함. 잡지, 신문 등에 사용) */
+    }
+
+    #text > h2 {
+      direction: rtl;
+      unicode-bidi: bidi-override;
+    }
+
+    #text > h3 {
+      text-decoration: overline; /* overline line-through underline */
+      text-transform: uppercase; /* uppercse lowercase capitalize(각단어 첫알파벳만 대문자) */
+      text-indent: 10px; /* 첫줄 들여 쓰기 */
+      letter-spacing: 3px; /* 문자사이 공백 */
+      line-height: 1.8; /* 각줄 높이 */
+      word-spacing: 10px; /* 단어와 간격 */
+    }
+
+    #text > span {
+      vertical-align: middle; /* top middle bottom */
+    }
+
+    #text > button {
+      width:100px;
+      height: 100px;
+    }
+
+    #text > p {
+      white-space: nowrap; /* 공백에 대한 줄바꿈처리지정 */
+    }
+
+    #text > h4 {
+      text-shadow: 2px 2px 5px red; /* 수평 수직 흐릿한정도 */
+    }
+  </style>
+  <div id="text">
+    <h1>안녕하세요</h1>
+    <h2>글자를 거꾸로 출력.</h2>
+    <h3>Text decoration</h3>
+    <span>수직 정렬</span><button>버튼</button>
+    <p>공백 공간 처리방식을 지정해주세요.
+      공백 공간 처리방식을 지정해주세요.
+      공백 공간 처리방식을 지정해주세요.
+      공백 공간 처리방식을 지정해주세요.
+    </p>
+    <h4>Text shadow Effect</h4>
+  </div>
+
+<!-- ------------------------------------------------------------------------------------------------ -->
+  <hr>
+  <h2>Font</h2>
+  
+
+<!-- ------------------------------------------------------------------------------------------------ -->
+  <hr>
+  <h2>position</h2>
+  <style>
+    #position > div {
+      width: 10px;
+      height: 10px;
+      margin: 10px;
+      background-color: red;
+    }
+
+    #position > div.box {
+      background-color: blue;
+      left: 10px;
+      top: 10px;
+      position: relative; /* 다양하게 바꿔보기 */
+    }
+
+    #position {
+      background: yellow;
+      width: 400px;
+      height: 400px;
+      left: 20px;
+      top: 20px;
+      position: static;
+      /*
+      static(default): 위치 지정 안할때 사용
+      relative: static위치로부터 위치를 상대적으로 변경할때
+      absolute: 원래 위치와 상관없이 좌표로 위치 지정 가능, 부모 기준으로 위치 결정
+      fixed: 원래위치와 상관없이 지정 가능, 브라우저에 대해 좌표를 지정, 스크롤에 영향을 받지않고 고정된 위치를 가짐
+      sticky: 스크롤의 특정 지점에 도달하면 fixed처럼 고정된 위치를 가짐
+      https://jsfiddle.net/daehwan/xk0od1av/28/ : fixed, sticky 차이 이해하기
+      */
+    }
+  </sty>
+  <div id="position">
+    <!-- div * 10-->
+    <div></div>
+    <div class="box"></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+
+
+  <!-- ----------------------------------------------------------------------- -->
+  <hr>
+  <h2>float</h2>
+  <style>
+    #float img {
+      float: left;
+      /*
+      글과 사진를 조화롭게 배치할때 유용
+      left, right, center, initial, inherit
+      */
+    }
+  </style>
+  <div id="float">
+    <p>
+      <img src="https://images.unsplash.com/photo-1537151625747-768eb6cf92b2?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8ZG9nfGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60" alt="dog" height=100px, width=100px>
+      어떠한글을 쓰고 있습니다 어떠한글을 쓰고 있습니다 어떠한글을 쓰고 있습니다
+    </p>
+  </div>
+
+
+  <!-- ----------------------------------------------------------------------- -->
+  <hr>
+  <h2>Flexbox</h2>
+  <!-- flexbox는 float의 발전형태, main axis를 기준으로 cross axis를 정함 -->
+  <style>
+
+    #flexbox {
+      background-color: beige;
+      height: 50vh;
+      width: 50vw;
+      display:flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      
+      justify-content:flex-end;
+      align-items:center;
+      align-content: flex-end;
+    }
+    /*
+    차후 정리...
+    */
+
+    #flexbox > div.item {
+      width: 20px;
+      height: 20px;
+    }
+
+    #flexbox > div.item1 {
+      background-color:red;
+    }
+    #flexbox > div.item2 {
+      background-color:orange;
+    }
+    #flexbox > div.item3 {
+      background-color:yellow;
+    }
+    #flexbox > div.item4 {
+      background-color:green;
+    }
+    #flexbox > div.item5 {
+      background-color:blue;
+    }
+  </style>
+  <!-- div#flexbox>div.item.item${$}*5-->
+  <div id="flexbox">
+    <div class="item item1">1</div>
+    <div class="item item2">2</div>
+    <div class="item item3">3</div>
+    <div class="item item4">4</div>
+    <div class="item item5">5</div>
+  </div>
+</body>
+</html>
