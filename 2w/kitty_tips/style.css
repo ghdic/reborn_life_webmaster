@@ -1,0 +1,115 @@
+body {
+  background: gray;
+  padding: 2em;
+}
+
+div.mycat {
+  position: relative;
+  text-align: center;
+  font-size: 1vw;
+  color: #fff;
+}
+
+div.mycat img {
+  display: block;
+  width: 30em;
+  margin: 0 auto;
+}
+
+.title {
+  position:absolute;
+  padding: 0;
+  margin: -1px;
+  white-space: nowrap;
+  border: 2px solid white;
+  left: 42%;
+  bottom: -10%;
+}
+
+ul#cute {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+ul#cute > li {
+  position: absolute;
+  min-width: 15em;
+  transition: all 0.25s ease-out;
+}
+
+ul#cute > li:hover {
+  min-width: 21em;
+}
+
+ul#cute > li h2{
+  position: relative;
+  padding: 0 0 0.4em;
+  border-bottom: solid 0.2em;
+  margin: 0 0 0.4em;
+  text-shadow: 0 0 1em 1em rgba(0, 0, 0, 0.1);
+}
+
+ul#cute > li h2:after {
+  content: "";
+  position: absolute;
+  bottom: -0.1em;
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  background: #fff;
+}
+
+ul#cute > li p {
+  margin: 0;
+  padding: 0;
+  text-shadow: 0 0 1em 1em rgba(0, 0, 0, 0.1);
+}
+
+ul#cute > .left {
+  text-align: left;
+}
+
+ul#cute > .left > h2 {
+  padding-right: 1em;
+}
+
+ul#cute > .left h2:after {
+  right: 0;
+  transform: translate(50%, 50%);
+}
+
+ul#cute > .ears {
+  right: 43%;
+  top: 0%;
+  min-width: 12em;
+}
+
+ul#cute > .eyes {
+  right: 55%;
+  top: 18%;
+}
+
+ul#cute > .right{
+  text-align: right;
+}
+
+ul#cute > .right h2{
+  padding-left: 1em;
+}
+
+ul#cute > .right h2:after {
+  left: 0;
+  transform: translate(-50%, 50%);
+}
+
+ul#cute > .nose {
+  left: 50%;
+  top: 29%;
+  min-width: 16em;
+}
+
+ul#cute > .paws {
+  left: 40%;
+  bottom: 0%;
+}
