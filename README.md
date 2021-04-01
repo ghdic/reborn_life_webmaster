@@ -20,13 +20,21 @@
 * css를 사용하는 3가지 방법(inline, export ,,,)
 * css selector [css selector의 이해](https://flukeout.github.io/)
 * [css 우선순위](https://webclub.tistory.com/407)
-* ~~~
+* background style
+* border style
+* margin & padding
+* block level & inline level
+* text & font style
 * position
+* float
+* flexbox
+* 가상클라스 & 가상요소
 * [css frog](https://flexboxfroggy.com/#ko) 하면서 flex 이해하기
-* [google font](https://fonts.google.com/), [font awesome](https://fontawesome.com/icons/google), [boot strap](https://getbootstrap.com/) 간단한 사용법
+* [google font](https://fonts.google.com/), [font awesome](https://fontawesome.com/icons/google)
+* [boot strap](https://getbootstrap.com/) 간단한 사용법
 
 
 
-
+## 도움이 될만한 글
 [브라우저는 어떻게 동작하는가?](https://d2.naver.com/helloworld/59361)
 [웹개발자 로드맵](https://github.com/Han-Kyeol/developer-roadmap-kr-)
