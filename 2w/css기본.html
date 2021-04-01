@@ -261,8 +261,25 @@
 <!-- ------------------------------------------------------------------------------------------------ -->
   <hr>
   <h2>Font</h2>
-  
-
+  <style>
+    /*
+    자주쓰는 글꼴
+    Serif: 끝을 뾰족하게 쓴 글꼴
+    Sans-serif: 직각으로 바르게쓸 글꼴
+    Monospace: 폭이 같은 기계적인 글꼴
+    Cursive: 필기체
+    Fantasy: 판타지 글꼴
+    */
+    #font > p {
+      font: italic small-caps bold 30px/12px Georgia, serif;
+      /* font-style, font-variant, font-weight font-size/line-height, font-family */
+    }
+  </style>
+  <div id='font'>
+    <p>
+      폰트를 바꿔볼까요
+    </p>
+  </div>
 <!-- ------------------------------------------------------------------------------------------------ -->
   <hr>
   <h2>position</h2>
@@ -338,26 +355,33 @@
   <h2>Flexbox</h2>
   <!-- flexbox는 float의 발전형태, main axis를 기준으로 cross axis를 정함 -->
   <style>
-
+    /* https://d2.naver.com/helloworld/8540176 */
     #flexbox {
       background-color: beige;
       height: 50vh;
       width: 50vw;
       display:flex;
-      flex-direction: column;
+      flex-direction: row;
       flex-wrap: wrap;
       
       justify-content:flex-end;
       align-items:center;
       align-content: flex-end;
+      /*
+      flex-direction -> 컨테이너 내의 아이템 주축 및 방향 지정
+      row: 글 작성 방향대로, row: 역방향, column: 글 세로 방향대로, column-reverse: 글 세로 역방향
+
+      flex-wrap -> 요소가 강제로 한줄에 배치되게 할것인지, 영역내에 벗어나지 않는선에서 여러행으로 나타낼것지 결정
+      nowrap: 강제 한줄로, wrap: 여러행에 걸쳐, wrap-reverse: wrap반대
+
+      justify-content -> 컨테이너 내의 아이템이 어떻게 배치 될것인지
+      
+      */
     }
-    /*
-    차후 정리...
-    */
 
     #flexbox > div.item {
-      width: 20px;
-      height: 20px;
+      width: 100px;
+      height: 100px;
     }
 
     #flexbox > div.item1 {
@@ -374,6 +398,16 @@
     }
     #flexbox > div.item5 {
       background-color:blue;
+      display: flex;
+      flex-direction: column;
+      align-content: flex-end;
+
+    }
+
+    .inner-item {
+      background-color: brown;
+      width: 20px;
+      height: 20px;
     }
   </style>
   <!-- div#flexbox>div.item.item${$}*5-->
@@ -382,7 +416,102 @@
     <div class="item item2">2</div>
     <div class="item item3">3</div>
     <div class="item item4">4</div>
-    <div class="item item5">5</div>
+    <div class="item item5">
+      <div class="inner-item">1</div>
+      <div class="inner-item">2</div>
+      <div class="inner-item">3</div>
+      <div class="inner-item">4</div>
+      <div class="inner-item">5</div>
+    </div>
   </div>
+
+<!-- ----------------------------------------------------------------------- -->
+<hr>
+<h2>::before ::after</h2>
+<style>
+  /*
+  : -> 가상 클래스 : 별도의 class를 지정하지 않아도 지정한것처럼 선택
+  :: -> 가상 요소 : 존재하지 않는 요소를 존재하는것처럼 선택
+
+  가상 클래스 종류
+  :first-child -> 첫번째 자식요소
+  :last-child -> 마지막 자식요소
+  :first-of-type -> 자식 중 처음으로 만난 해당 요소
+  :last-of-type -> 자식 중 가장 마지막에 해당하는 요소
+  :nth-child(an+k) -> an+k번째 자식 요소에 해당하는것(even, odd도 ok)
+  :nth-of-type(n) -> 자식 중 n번째 해당하는 것들
+  :nth-last-of-type(n) -> 자식요소중 뒤에서 n번째 해당하는 것들
+  :only-child: 자식을 하나만 갖고 있는 요소
+  :only-of-type: 같은 유형의 형제가 없는 경우
+  :not(가상클래스) -> 해당 가상클래스가 아닌 요소
+  :root -> 루트요소
+  :empty -> 컨텐츠가 없는 요소
+
+  가상요소 종류
+  ::first-line -> 요소의 텍스트에서 첫 줄에 스타일을 적용
+  ::first-leter -> 요소의 첫 번째 글자에 스타일을 적용
+  ::selection -> 요소의 텍스트에서 사용자가 드래그한 영역의 속성을 변경
+  ::placeholder -> Input 필드 힌트 텍스트에 스타일을 적용
+  ::before
+  ::after
+
+  ::before ::after와 함께 쓰이는 'content'는 가짜 속성
+  */
+  .before::before {
+    content: url('google.png');
+  }
+
+  .after::after {
+    content: url('google.png');
+  }
+</style>
+<div class="before">
+  google
+</div>
+<div class="after">
+  google
+</div>
+
+<!-- ----------------------------------------------------------------------- -->
+<hr>
+<h2>폰트 추가 & 아이콘 가져오기</h2>
+<!-- https://fonts.google.com/ -->
+<!-- https://fontawesome.com/ -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+
+  #font-style {
+    font-family: 'Indie Flower', cursive;
+    font-size: 40px;
+  }
+</style>
+<div id="font-style">
+  What a wonderful day!!
+</div>
+<i class="fab fa-facebook"></i>
+<i class="fas fa-camera"></i>
+<!-- https://fontawesome.com/how-to-use/on-the-web/referencing-icons/basic-use -->
+<!-- fas는 solid스타일 아이콘, fab은 brand 아이콘-->
+
+
+<!-- ----------------------------------------------------------------------- -->
+<hr>
+<h2>Bootstrap 간단 사용법</h2>
+<!-- 리소스가 무거워서 요즘 잘안씀.. 빨리빨리 개발해야 될 경우에 자주 쓰임, css 참고용으로.. -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
+
+<button type="button" class='btn btn-primary btn-lg'>멋진 버튼</button>
+<div class="card" style="width: 18rem;">
+  <img src="google.png" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
 </body>
 </html>
