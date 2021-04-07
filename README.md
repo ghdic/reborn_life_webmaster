@@ -34,6 +34,29 @@
 * [boot strap](https://getbootstrap.com/) 간단한 사용법
 
 
+## 3w
+* 깃 사용법(UI상으로 배울것)
+  1. 초기 아이디 설정(설정 안할시 모르는 unknown 프로필이 커밋한거로 나옴)
+   ```
+    $ git config --global user.name "ghdic"
+    $ git config --global user.email ghdic77@gmail.com
+    ```
+  1. `git clone (해당 repo URL)` 레포를 내컴퓨터에 복제한다.
+  1. `git add 파일이름` 업로드할 파일을 추가한다.
+  1. `git commit -m "쓸 메세지"` add한 파일에 어떤일을 한건지 정의
+  1. `git push` commit한것들을 실제 깃에 업로드한다.
+  1. `git pull` 현재 상태에서 최신상태로 동기화한다.(본인이 수정한건 남음, 충돌할 경우 에러)
+  1. `git branch (추가할 브런치 이름)` 브런치를 추가한다
+  1. `git checkout (바꿀 브런치 이름)` 브런치를 바꿈
+  1. pull request(깃헙 사이트에서) -> 해당 브런치에서 작업을 끝낸경우 한다.(작업이 다 끝나고 merge되면 브런치 삭제!)
+* js
+  1. script파일 삽입(스크립트 파일이 DOM에 접근 하려는 경우 html파일 파싱 중 실행 되어버리면 에러가 발생!)
+    * head에 삽입하는 경우 ![head삽입](img/head삽입.png)
+    * body에 삽입하는 경우 ![body삽입](img/body삽입.png)
+    * head + async 삽입하는 경우 ![head+async삽입](img/head_async삽입.png)
+    * head + defer 삽입하는 경우 ![head+defer삽입](img/head_defer삽입.png)
+  2. 변수 선언 + 자료형 + 호이스팅
+
 
 ## 도움이 될만한 글
 [브라우저는 어떻게 동작하는가?](https://d2.naver.com/helloworld/59361)
