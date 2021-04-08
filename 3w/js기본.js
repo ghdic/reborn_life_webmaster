@@ -207,3 +207,201 @@ let = arr[1, 2, 3, 4]
 arr.forEach((item, index, arr2) => {
   console.log(item, index, arr2[index+1])
 })
+
+
+// &&& 함수(Function) &&&
+// function 함수이름(매개변수) {}
+function func(msg="default msg") {
+  alert(msg)
+}
+
+func("Hello World!") // 함수 호출
+
+// // if using TS
+// function func(msg: string): number {
+//   alert(msg)
+// }
+
+const print_console = function () { console.log("print") } // 변수처럼 할당 ok
+print_console()
+
+const simple_print = () => console.log("print") // arrow function
+simple_print()
+
+(function hell() {
+  console.log("hello")
+})() // 함수 선언&실행 동시
+
+
+// &&& DOM Interface 조작 &&&
+// Document를 통해서 브라우저에서의 웹페이즈 콘텐츠에 접근이 가능
+let item = document.querySelector('#test') // element 반환
+document.querySelectorAll('.test') // 해당하는 Node들의 NodeList반환
+item.style.color = 'red'; // style 바꾸기
+item.textContent = 'hi'; // text 바꾸기
+item.id = 'newId' // id 접근
+item.classList.add('newClass') // class 추가
+
+// &&& Event &&&
+/* 
+  onclick
+  onchange
+  onfocus
+  onblur
+  hover
+*/
+
+let element = document.querySelector("#test")
+let isClicked = () => alert("클릭되었습니다")
+element.addEventListener("click", isClicked) // (event, handler, [options ...])
+element.removeEventListener("click", isClicked)
+
+
+// &&& Class &&&
+class Person {
+
+  // init
+  constructor(name, age) {
+    this.name = name
+    this.age = age
+  }
+
+  // method
+  speak() {
+    console.log(`$(this.name): hello!`)
+  }
+}
+
+const bob = new Person('bob', 20)
+console.log(bob['age'])
+console.log(bob.name)
+
+// getter, setter 정의
+class User {
+  constructor(firstName, lastName, age) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.age = age;
+  }
+
+  get age() { // 값 가져올때 행위 정의
+    return this._age;
+  }
+
+  set age(value) { // 값 설정할때 행위 정의
+    // if (value < 0) {
+    //   throw Error('age can not be negative');
+    // }
+    this._age = value < 0 ? 0 : value;
+  }
+}
+
+// public, private
+class Experiment {
+  publicField = 2;
+  #privateField = 0; // private
+}
+const experiment = new Experiment();
+console.log(experiment.publicField);
+console.log(experiment.privateField); // undefined
+
+
+// 상속
+class Shape {
+  constructor(width, height, color) {
+    this.width = width;
+    this.height = height;
+    this.color = color;
+  }
+
+  draw() {
+    console.log(`drawing ${this.color} color!`);
+  }
+
+  getArea() {
+    return this.width * this.height;
+  }
+}
+
+class Rectangle extends Shape {}
+class Triangle extends Shape {
+  draw() {
+    super.draw();
+    console.log('🔺');
+  }
+  getArea() { // 재정의
+    return (this.width * this.height) / 2;
+  }
+
+  toString() {
+    return `Triangle: color: ${this.color}`;
+  }
+}
+
+const rectangle = new Rectangle(20, 20, 'blue');
+rectangle.draw();
+console.log(rectangle.getArea());
+const triangle = new Triangle(20, 20, 'red');
+triangle.draw();
+console.log(triangle.getArea());
+
+// instanceOf로 어떤 클래스인지 확인
+console.log(triangle instanceof Rectangle)
+console.log(triangle instanceof Triangle)
+console.log(triangle instanceof Shape)
+
+
+// &&& 배열 &&&
+// 선언 방식
+const arr1 = new Array(1, 2, 3, 4. 5);
+const arr2 = [1, 2];
+
+// 접근, 사용
+console.log(arr1[0])
+arr1[0] = 10
+console.log(arr1[0])
+console.log(arr1.length)
+console.log(arr1[arr1.length - 1])
+
+// 배열 반복문 돌리기
+for(let i = 0; i < arr1.length; i++) {
+  console.log(arr1[i])
+}
+
+// for of
+for (let item of arr1) {
+  console.log(item)
+}
+
+// forEach
+arr1.forEach((item) => console.log(item))
+
+// 배열 기능들
+// 추가, 삭제, 복사
+arr1.push(20, 30)
+console.log(arr1)
+
+const item = arr1.pop() // 맨뒤에 원소 삭제
+console.log(item)
+
+arr1.unshift(20, 100) // 앞에 원소 추가
+console.log(arr1)
+
+arr1.shift() // 앞에 원소 삭제
+console.log(arr1)
+
+// 배열 수정(삭제, 추가)
+arr1.splice(1, 1) // splice(start[, deleteCount], item1, item2...)
+console.splice()
+arr1.splice(1, 0, 1, 2)
+
+console.log(arr1.indexOf(1)) // 해당 값을 가진 원소의 index위치 반환
+console.log(arr1.lastIndexOf(1)) // 해당 값을 가진 원소중 마지막 원소 반환
+let index = -1
+do {
+  index = arr1.index(1, index + 1) // 모든 1값을 가진 element index찾기
+  console.log(index)
+} while(index === -1)
+
+// Exist?
+console.log(arr1.includes(1))
