@@ -368,14 +368,30 @@
       align-items:center;
       align-content: flex-end;
       /*
-      flex-direction -> 컨테이너 내의 아이템 주축 및 방향 지정
-      row: 글 작성 방향대로, row: 역방향, column: 글 세로 방향대로, column-reverse: 글 세로 역방향
-
-      flex-wrap -> 요소가 강제로 한줄에 배치되게 할것인지, 영역내에 벗어나지 않는선에서 여러행으로 나타낼것지 결정
-      nowrap: 강제 한줄로, wrap: 여러행에 걸쳐, wrap-reverse: wrap반대
-
-      justify-content -> 컨테이너 내의 아이템이 어떻게 배치 될것인지
       
+      display	-> Flex Container를 정의 | flex: Block 특성의 Flex Container를 정의 | inline-flex: inline 특성의 Flex Container를 정의
+      flex-flow -> flex-direction와 flex-wrap의 단축 속성 | flex-flow: 주축 여러줄 묶음
+      flex-direction ->	Flex Items의 주 축(main-axis)을 설정 | row, column, reverse-row, reverse-column
+      flex-wrap ->	Flex Items의 여러 줄 묶음(줄 바꿈) 설정 | wrap: items를 여러줄로 묶음, nowrap: items를 한줄로 표시, wrap-reverse
+      justify-content ->	주 축(main-axis)의 정렬 방법을 설정 | flex-start: items의 시작점으로 정렬, flex-end: items의 끝점으로 정렬, 
+        center: items를 가운데 정렬, space-between: 시작 item은 시작점에,
+        마지막 item은 끝에 정렬하고 나머지는 고르게 정렬, space-around: items를 균등한 여백을 포함해 정렬 
+      align-content ->	교차 축(cross-axis)의 정렬 방법을 설정(2줄 이상일 경우 align-items보다 우선됌)
+        | stretch: Container의 교차 축을 채우기 위해 Items를 늘림(default), flex-start: items를 각 줄의 시작점으로 정렬,
+        flex-end: items를 각 줄 끝점으로 정렬, center: items를 가운데 정렬, space-between: 시작 item은 시작점에,
+        마지막 item은 끝에 정렬하고 나머지는 고르게 정렬, space-around: items를 균등한 여백을 포함해 정렬 
+      align-items ->	교차 축(cross-axis)에서 Items의 정렬 방법을 설정(1줄) | stretch: Container의 교차 축을 채우기 위해 Items를 늘림(default),
+        flex-start	Items를 각 줄의 시작점(flex-start)으로 정렬, flex-end	Items를 각 줄의 끝점(flex-end)으로 정렬,
+        center	Items를 가운데 정렬, baseline	Items를 문자 기준선에 정렬
+      
+      *Flex Items
+      order:	Flex Item의 순서를 설정 | order: 우선순위(기본 전부 0으로 되어있음)
+      flex:	flex-grow, flex-shrink, flex-basis의 단축 속성 | flex: 증가너비 감소너비 기본너비;
+      flex-grow:	Flex Item의 증가 너비 비율을 설정
+      flex-shrink:	Flex Item의 감소 너비 비율을 설정
+      flex-basis:	Flex Item의 (공간 배분 전) 기본 너비 설정
+      align-self:	교차 축(cross-axis)에서 Item의 정렬 방법을 설정 
+
       */
     }
 
