@@ -1,0 +1,37 @@
+#app {
+    margin: auto;
+    width: 600px;
+    padding: 10px;
+    font-size: 1.2rem;
+    border: solid black 2px;
+}
+
+#app > h2 {
+    margin: auto;
+    font-size: 40px;
+    text-align: center;
+    width: 50%;
+    border: solid black 2px;
+}
+
+#calc {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+#calc input[type="text"] {
+    width:400px;
+    height: 100px;
+    margin: 20px 10px;
+    font-size: 30px;
+    flex: 3 3 3;
+}
+
+#calc button {
+    width: 100px;
+    height: 100px;
+    margin: 20px;
+    flex: 1 1 1;
+    font-size: 20px;
+}
