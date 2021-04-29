@@ -70,6 +70,13 @@
 * canvas를 이용해 ball bounce 그려보기
 * 계산기 만들기
 
+## 5w
+* 시험대비 모의 중간고사
+
+## 6w
+* 심플 게시판 만들기
+* url-pattern 설정
+* 인코딩 필터 설정
 
 ## 도움이 될만한 글
 * [브라우저는 어떻게 동작하는가?](https://d2.naver.com/helloworld/59361)
