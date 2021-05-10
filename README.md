@@ -78,6 +78,16 @@
 * url-pattern 설정
 * 인코딩 필터 설정
 
+## 7w
+* bbsDTO, bbsDAO 만들기, 테이블 출력까지 ok
+* 프로젝트 진행과정 공유, 향후 할거 결정
+
+
+## 8w
+* 게시판 CRUD를 하는 페이지를 전부 구성
+* 크롤링 학습 및 실습
+
+
 ## 도움이 될만한 글
 * [브라우저는 어떻게 동작하는가?](https://d2.naver.com/helloworld/59361)
 * [웹개발자 로드맵](https://github.com/Han-Kyeol/developer-roadmap-kr-)
